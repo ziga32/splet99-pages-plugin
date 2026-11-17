@@ -21,7 +21,19 @@ final class Settings {
 
 	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_page' ) );
+		add_filter( 'plugin_action_links_' . Plugin::own_basename(), array( __CLASS__, 'action_links' ) );
 		add_action( 'admin_post_' . Plugin::OPTION, array( __CLASS__, 'save' ) );
+	}
+
+	// "Nastavitve" link in the plugin's row on the Plugins page (the row is visible to the owner only).
+	public static function action_links( $links ) {
+		$links = (array) $links;
+
+		if ( Plugin::is_owner() ) {
+			array_unshift( $links, '<a href="' . esc_url( self::tab_url( 'notifications' ) ) . '">Nastavitve</a>' );
+		}
+
+		return $links;
 	}
 
 	public static function add_page() {
