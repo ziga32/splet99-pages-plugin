@@ -3,7 +3,7 @@
  * Plugin Name:       Splet99 Pages
  * Plugin URI:        https://github.com/ziga32/splet99-pages-plugin
  * Description:       Orodja Splet99 za spletne strani, ki jih vzdržujemo.
- * Version:           0.9.3
+ * Version:           0.9.4
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Splet99 d.o.o.
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SPLET99_PAGES_VERSION', '0.9.3' );
+define( 'SPLET99_PAGES_VERSION', '0.9.4' );
 define( 'SPLET99_PAGES_FILE', __FILE__ );
 define( 'SPLET99_PAGES_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SPLET99_PAGES_URL', plugin_dir_url( __FILE__ ) );
